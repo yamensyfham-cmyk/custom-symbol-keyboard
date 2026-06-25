@@ -61,6 +61,7 @@ import rkr.simplekeyboard.inputmethod.keyboard.KeyboardActionListener;
 import rkr.simplekeyboard.inputmethod.keyboard.KeyboardId;
 import rkr.simplekeyboard.inputmethod.keyboard.KeyboardSwitcher;
 import rkr.simplekeyboard.inputmethod.keyboard.MainKeyboardView;
+import rkr.simplekeyboard.inputmethod.keyboard.SymbolKeyboardManager;
 import rkr.simplekeyboard.inputmethod.latin.common.Constants;
 import rkr.simplekeyboard.inputmethod.latin.define.DebugFlags;
 import rkr.simplekeyboard.inputmethod.latin.inputlogic.InputLogic;
@@ -295,7 +296,7 @@ public class LatinIME extends InputMethodService implements KeyboardActionListen
     @Override
     public boolean onEvaluateInputViewShown() {
         final boolean useOnScreen = super.onEvaluateInputViewShown();
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.BAKLAVA) {
+        if (Build.VERSION.SDK_INT < 37) {
             return useOnScreen;
         } else {
             return useOnScreen || mSettings.getCurrent().mUseOnScreen;
