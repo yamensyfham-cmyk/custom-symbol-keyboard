@@ -1,73 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- sym_page_0013.xml - Page 14/112 -->
+<!-- sym_page_0013.xml - Page 14/84 -->
 <merge xmlns:latin="http://schemas.android.com/apk/res-auto">
     <include latin:keyboardLayout="@xml/key_styles_common" />
     <include latin:keyboardLayout="@xml/key_styles_currency" />
     <Row latin:keyWidth="10%p" latin:backgroundType="functional">
-        <Key latin:keySpec="ABC|!code/key_switch_alpha_symbol" latin:keyWidth="14%p" />
-        <Key latin:keySpec="&#x2261; Page 14|!code/key_symbol_page" latin:keyWidth="fillRight" latin:keyLabelFlags="autoXScale" />
+        <Key latin:keySpec="&#x2261; Thorfin 14/84|!code/key_symbol_page" latin:keyWidth="fillRight" latin:keyLabelFlags="autoXScale" />
     </Row>
-    <Row latin:keyWidth="11%p">
-        <Key latin:keySpec="&#x2389;|0x2389" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x238A;|0x238A" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x238B;|0x238B" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x238C;|0x238C" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x238D;|0x238D" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x238E;|0x238E" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x238F;|0x238F" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x2390;|0x2390" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x2391;|0x2391" latin:keyLabelFlags="autoScale" />
+    <Row latin:keyWidth="10%p">
+        <Key latin:keySpec="&#x24AC;|0x24AC" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24AD;|0x24AD" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24AE;|0x24AE" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24AF;|0x24AF" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24B0;|0x24B0" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24B1;|0x24B1" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24B2;|0x24B2" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24B3;|0x24B3" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24B4;|0x24B4" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24B5;|0x24B5" latin:keyLabelFlags="autoScale" />
     </Row>
-    <Row latin:keyWidth="11%p">
-        <Key latin:keySpec="&#x2392;|0x2392" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x2393;|0x2393" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x2394;|0x2394" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x2395;|0x2395" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x2396;|0x2396" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x2397;|0x2397" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x2398;|0x2398" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x2399;|0x2399" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x239A;|0x239A" latin:keyLabelFlags="autoScale" />
+    <Row latin:keyWidth="10%p">
+        <Key latin:keySpec="&#x24B6;|0x24B6" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24B7;|0x24B7" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24B8;|0x24B8" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24B9;|0x24B9" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24BA;|0x24BA" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24BB;|0x24BB" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24BC;|0x24BC" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24BD;|0x24BD" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24BE;|0x24BE" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24BF;|0x24BF" latin:keyLabelFlags="autoScale" />
     </Row>
-    <Row latin:keyWidth="11%p">
-        <Key latin:keySpec="&#x239B;|0x239B" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x239C;|0x239C" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x239D;|0x239D" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x239E;|0x239E" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x239F;|0x239F" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x23A0;|0x23A0" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x23A1;|0x23A1" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x23A2;|0x23A2" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x23A3;|0x23A3" latin:keyLabelFlags="autoScale" />
+    <Row latin:keyWidth="10%p">
+        <Key latin:keySpec="&#x24C0;|0x24C0" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24C1;|0x24C1" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24C2;|0x24C2" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24C3;|0x24C3" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24C4;|0x24C4" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24C5;|0x24C5" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24C6;|0x24C6" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24C7;|0x24C7" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24C8;|0x24C8" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24C9;|0x24C9" latin:keyLabelFlags="autoScale" />
     </Row>
-    <Row latin:keyWidth="11%p">
-        <Key latin:keySpec="&#x23A4;|0x23A4" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x23A5;|0x23A5" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x23A6;|0x23A6" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x23A7;|0x23A7" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x23A8;|0x23A8" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x23A9;|0x23A9" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x23AA;|0x23AA" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x23AB;|0x23AB" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x23AC;|0x23AC" latin:keyLabelFlags="autoScale" />
+    <Row latin:keyWidth="10%p">
+        <Key latin:keySpec="&#x24CA;|0x24CA" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24CB;|0x24CB" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24CC;|0x24CC" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24CD;|0x24CD" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24CE;|0x24CE" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24CF;|0x24CF" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24D0;|0x24D0" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24D1;|0x24D1" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24D2;|0x24D2" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24D3;|0x24D3" latin:keyLabelFlags="autoScale" />
     </Row>
-    <Row latin:keyWidth="11%p">
-        <Key latin:keySpec="&#x23AD;|0x23AD" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x23AE;|0x23AE" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x23AF;|0x23AF" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x23B0;|0x23B0" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x23B1;|0x23B1" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x23B2;|0x23B2" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x23B3;|0x23B3" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x23B4;|0x23B4" latin:keyLabelFlags="autoScale" />
-        <Key latin:keySpec="&#x23B5;|0x23B5" latin:keyLabelFlags="autoScale" />
+    <Row latin:keyWidth="10%p">
+        <Key latin:keySpec="&#x24D4;|0x24D4" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24D5;|0x24D5" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24D6;|0x24D6" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24D7;|0x24D7" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24D8;|0x24D8" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24D9;|0x24D9" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24DA;|0x24DA" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24DB;|0x24DB" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24DC;|0x24DC" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24DD;|0x24DD" latin:keyLabelFlags="autoScale" />
+    </Row>
+    <Row latin:keyWidth="10%p">
+        <Key latin:keySpec="&#x24DE;|0x24DE" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24DF;|0x24DF" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24E0;|0x24E0" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24E1;|0x24E1" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24E2;|0x24E2" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24E3;|0x24E3" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24E4;|0x24E4" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24E5;|0x24E5" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24E6;|0x24E6" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x24E7;|0x24E7" latin:keyLabelFlags="autoScale" />
     </Row>
     <Row latin:keyWidth="10%p" latin:backgroundType="functional">
-        <Key latin:keySpec="&#x25C0;|!code/key_symbol_prev" latin:keyWidth="14%p" />
-        <Key latin:keySpec="14/112|!code/key_symbol_page_info" latin:keyWidth="fillRight" latin:keyLabelFlags="autoXScale" />
+        <Key latin:keySpec="&#x25C0;|!code/key_symbol_prev" latin:keyWidth="20%p" />
+        <Key latin:keySpec="14/84|!code/key_symbol_page_info" latin:keyWidth="fillRight" latin:keyLabelFlags="autoXScale" />
         <Key latin:keyStyle="deleteKeyStyle"
-            latin:keyXPos="80%p"
+            latin:keyXPos="70%p"
             latin:keyWidth="10%p" />
-        <Key latin:keySpec="&#x25B6;|!code/key_symbol_next" latin:keyWidth="14%p" />
+        <Key latin:keySpec="&#x25B6;|!code/key_symbol_next" latin:keyWidth="20%p" />
     </Row>
 </merge>

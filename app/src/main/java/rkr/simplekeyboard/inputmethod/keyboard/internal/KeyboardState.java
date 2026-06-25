@@ -100,14 +100,13 @@ public final class KeyboardState {
         if (DEBUG_EVENT) {
             Log.d(TAG, "onLoadKeyboard: " + stateToString(autoCapsFlags, recapitalizeMode));
         }
-        // Reset alphabet shift state.
         mAlphabetShiftState.setShiftLocked(false);
         mPrevMainKeyboardWasShiftLocked = false;
         mPrevSymbolsKeyboardWasShifted = false;
         mShiftKeyState.onRelease();
         mSymbolKeyState.onRelease();
 
-        setAlphabetKeyboard(autoCapsFlags, recapitalizeMode);
+        setSymbolsKeyboard();
     }
 
     // Constants for {@link SavedKeyboardState#mShiftMode} and {@link #setShifted(int)}.

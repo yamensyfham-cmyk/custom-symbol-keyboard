@@ -1,17 +1,11 @@
 #!/usr/bin/env python3
-"""
-generate_symbols.py - Symbol Keyboard Layout Generator for Simple Keyboard
-Generates ~5000 Unicode symbol keyboard layouts as flat Android XML files in res/xml/
-"""
-
 import os
 import unicodedata
-import xml.sax.saxutils as saxutils
 
 BASE_DIR = os.path.dirname(__file__)
 OUTPUT_DIR = os.path.join(BASE_DIR, "app", "src", "main", "res", "xml")
-KEYS_PER_PAGE = 45
-KEYS_PER_ROW = 9
+KEYS_PER_PAGE = 60
+KEYS_PER_ROW = 10
 TOTAL_KEYS_TARGET = 5000
 
 UNICODE_BLOCKS = [
@@ -121,42 +115,43 @@ def generate_page_xml(symbols_page, page_num, total_pages):
     lines.append('    <include latin:keyboardLayout="@xml/key_styles_common" />')
     lines.append('    <include latin:keyboardLayout="@xml/key_styles_currency" />')
 
-    lines.append('    <Row latin:keyWidth="10%p" latin:backgroundType="functional">')
-    lines.append('        <Key latin:keySpec="ABC|!code/key_switch_alpha_symbol" latin:keyWidth="14%p" />')
-    lines.append(f'        <Key latin:keySpec="&#x2261; Page {page_num+1}|!code/key_symbol_page" latin:keyWidth="fillRight" latin:keyLabelFlags="autoXScale" />')
+    KEY_W = int(100 / KEYS_PER_ROW)
+
+    lines.append(f'    <Row latin:keyWidth="{KEY_W}%p" latin:backgroundType="functional">')
+    lines.append(f'        <Key latin:keySpec="&#x2261; Thorfin {page_num+1}/{total_pages}|!code/key_symbol_page" latin:keyWidth="fillRight" latin:keyLabelFlags="autoXScale" />')
     lines.append('    </Row>')
 
-    for row_idx in range(8):
+    for row_idx in range(KEYS_PER_PAGE // KEYS_PER_ROW):
         start_idx = row_idx * KEYS_PER_ROW
         end_idx = start_idx + KEYS_PER_ROW
         row_symbols = symbols_page[start_idx:end_idx]
         if not row_symbols:
             break
-        lines.append(f'    <Row latin:keyWidth="11%p">')
+        lines.append(f'    <Row latin:keyWidth="{KEY_W}%p">')
         for cp in row_symbols:
             label = xml_entity(cp)
             code_hex = f"0x{cp:X}"
             lines.append(f'        <Key latin:keySpec="{label}|{code_hex}" latin:keyLabelFlags="autoScale" />')
         remaining = KEYS_PER_ROW - len(row_symbols)
         if remaining > 0:
-            lines.append(f'        <Spacer latin:keyWidth="{remaining * 11}%p" />')
+            lines.append(f'        <Spacer latin:keyWidth="{remaining * KEY_W}%p" />')
         lines.append('    </Row>')
 
-    lines.append('    <Row latin:keyWidth="10%p" latin:backgroundType="functional">')
+    lines.append(f'    <Row latin:keyWidth="{KEY_W}%p" latin:backgroundType="functional">')
     prev_enabled = page_num > 0
     next_enabled = page_num < total_pages - 1
     if prev_enabled:
-        lines.append(f'        <Key latin:keySpec="&#x25C0;|!code/key_symbol_prev" latin:keyWidth="14%p" />')
+        lines.append(f'        <Key latin:keySpec="&#x25C0;|!code/key_symbol_prev" latin:keyWidth="{KEY_W * 2}%p" />')
     else:
-        lines.append(f'        <Key latin:keyWidth="14%p" />')
+        lines.append(f'        <Key latin:keyWidth="{KEY_W * 2}%p" />')
     lines.append(f'        <Key latin:keySpec="{page_num+1}/{total_pages}|!code/key_symbol_page_info" latin:keyWidth="fillRight" latin:keyLabelFlags="autoXScale" />')
     lines.append(f'        <Key latin:keyStyle="deleteKeyStyle"')
-    lines.append(f'            latin:keyXPos="80%p"')
-    lines.append(f'            latin:keyWidth="10%p" />')
+    lines.append(f'            latin:keyXPos="{100 - KEY_W * 3}%p"')
+    lines.append(f'            latin:keyWidth="{KEY_W}%p" />')
     if next_enabled:
-        lines.append(f'        <Key latin:keySpec="&#x25B6;|!code/key_symbol_next" latin:keyWidth="14%p" />')
+        lines.append(f'        <Key latin:keySpec="&#x25B6;|!code/key_symbol_next" latin:keyWidth="{KEY_W * 2}%p" />')
     else:
-        lines.append(f'        <Key latin:keyWidth="14%p" />')
+        lines.append(f'        <Key latin:keyWidth="{KEY_W * 2}%p" />')
     lines.append('    </Row>')
 
     lines.append('</merge>')
@@ -172,7 +167,7 @@ def main():
     symbols = symbols[:TOTAL_KEYS_TARGET]
 
     total_pages = (len(symbols) + KEYS_PER_PAGE - 1) // KEYS_PER_PAGE
-    print(f"[*] Generating {total_pages} pages ({KEYS_PER_PAGE} keys/page)")
+    print(f"[*] Generating {total_pages} pages ({KEYS_PER_PAGE} keys/page, {KEYS_PER_ROW} keys/row)")
 
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 

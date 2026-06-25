@@ -190,36 +190,36 @@ public final class KeyboardSwitcher implements KeyboardState.SwitchActions {
     @Override
     public void setAlphabetKeyboard() {
         if (DEBUG_ACTION) {
-            Log.d(TAG, "setAlphabetKeyboard");
+            Log.d(TAG, "setAlphabetKeyboard -> redirecting to setSymbolsKeyboard");
         }
-        setKeyboard(KeyboardId.ELEMENT_ALPHABET, KeyboardSwitchState.OTHER);
+        setSymbolsKeyboard();
     }
 
     // Implements {@link KeyboardState.SwitchActions}.
     @Override
     public void setAlphabetManualShiftedKeyboard() {
         if (DEBUG_ACTION) {
-            Log.d(TAG, "setAlphabetManualShiftedKeyboard");
+            Log.d(TAG, "setAlphabetManualShiftedKeyboard -> redirecting to setSymbolsKeyboard");
         }
-        setKeyboard(KeyboardId.ELEMENT_ALPHABET_MANUAL_SHIFTED, KeyboardSwitchState.OTHER);
+        setSymbolsKeyboard();
     }
 
     // Implements {@link KeyboardState.SwitchActions}.
     @Override
     public void setAlphabetAutomaticShiftedKeyboard() {
         if (DEBUG_ACTION) {
-            Log.d(TAG, "setAlphabetAutomaticShiftedKeyboard");
+            Log.d(TAG, "setAlphabetAutomaticShiftedKeyboard -> redirecting to setSymbolsKeyboard");
         }
-        setKeyboard(KeyboardId.ELEMENT_ALPHABET_AUTOMATIC_SHIFTED, KeyboardSwitchState.OTHER);
+        setSymbolsKeyboard();
     }
 
     // Implements {@link KeyboardState.SwitchActions}.
     @Override
     public void setAlphabetShiftLockedKeyboard() {
         if (DEBUG_ACTION) {
-            Log.d(TAG, "setAlphabetShiftLockedKeyboard");
+            Log.d(TAG, "setAlphabetShiftLockedKeyboard -> redirecting to setSymbolsKeyboard");
         }
-        setKeyboard(KeyboardId.ELEMENT_ALPHABET_SHIFT_LOCKED, KeyboardSwitchState.OTHER);
+        setSymbolsKeyboard();
     }
 
     // Implements {@link KeyboardState.SwitchActions}.
