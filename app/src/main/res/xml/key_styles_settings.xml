@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:latin="http://schemas.android.com/apk/res-auto">
+    <key-style
+        latin:styleName="settingsKeyStyle"
+        latin:keySpec="!icon/settings_key|!code/key_settings"
+        latin:keyActionFlags="noKeyPreview"
+        latin:backgroundType="functional" />
+</merge>

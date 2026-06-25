@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:latin="http://schemas.android.com/apk/res-auto">
+    <key-style
+        latin:styleName="enterKeyStyle"
+        latin:keySpec="!icon/enter_key|!code/key_enter"
+        latin:keyActionFlags="noKeyPreview"
+        latin:backgroundType="action" />
+</merge>
