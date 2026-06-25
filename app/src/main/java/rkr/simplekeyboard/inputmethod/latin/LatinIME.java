@@ -729,8 +729,39 @@ public class LatinIME extends InputMethodService implements KeyboardActionListen
     @Override
     public void onCodeInput(final int codePoint, final int x, final int y,
             final boolean isKeyRepeat) {
+        if (handleSymbolNavigation(codePoint)) {
+            return;
+        }
         final Event event = createSoftwareKeypressEvent(getCodePointForKeyboard(codePoint), isKeyRepeat);
         onEvent(event);
+    }
+
+    private boolean handleSymbolNavigation(int code) {
+        boolean handled = false;
+        SymbolKeyboardManager symMgr = null;
+        switch (code) {
+        case Constants.CODE_SYMBOL_PREV:
+            symMgr = SymbolKeyboardManager.getInstance(this);
+            if (symMgr.hasPrevPage()) {
+                symMgr.prevPage();
+                mKeyboardSwitcher.setSymbolsKeyboard();
+                handled = true;
+            }
+            break;
+        case Constants.CODE_SYMBOL_NEXT:
+            symMgr = SymbolKeyboardManager.getInstance(this);
+            if (symMgr.hasNextPage()) {
+                symMgr.nextPage();
+                mKeyboardSwitcher.setSymbolsKeyboard();
+                handled = true;
+            }
+            break;
+        case Constants.CODE_SYMBOL_PAGE:
+        case Constants.CODE_SYMBOL_PAGE_INFO:
+            handled = true;
+            break;
+        }
+        return handled;
     }
 
     // This method is public for testability of LatinIME, but also in the future it should

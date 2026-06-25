@@ -104,6 +104,11 @@ public final class Constants {
     public static final int CODE_SYMBOL_SHIFT = -12;
     // Code value representing the code is not specified.
     public static final int CODE_UNSPECIFIED = -13;
+    // Symbol keyboard navigation codes.
+    public static final int CODE_SYMBOL_PAGE = -100;
+    public static final int CODE_SYMBOL_PREV = -101;
+    public static final int CODE_SYMBOL_NEXT = -102;
+    public static final int CODE_SYMBOL_PAGE_INFO = -103;
 
     public static boolean isLetterCode(final int code) {
         return code >= CODE_SPACE;

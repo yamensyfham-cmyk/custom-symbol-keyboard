@@ -41,6 +41,7 @@ import rkr.simplekeyboard.inputmethod.keyboard.internal.KeyDrawParams;
 import rkr.simplekeyboard.inputmethod.keyboard.internal.KeyVisualAttributes;
 import rkr.simplekeyboard.inputmethod.latin.common.Constants;
 import rkr.simplekeyboard.inputmethod.latin.settings.Settings;
+import rkr.simplekeyboard.inputmethod.latin.utils.FontSingleton;
 import rkr.simplekeyboard.inputmethod.latin.utils.TypefaceUtils;
 
 /**
@@ -170,6 +171,12 @@ public class KeyboardView extends View {
         final int keyHeight = keyboard.mMostCommonKeyHeight;
         mKeyDrawParams.updateParams(keyHeight, mKeyVisualAttributes);
         mKeyDrawParams.updateParams(keyHeight, keyboard.mKeyVisualAttributes);
+        // Apply custom Unicode symbol font for non-alphabet keyboards
+        if (keyboard != null && !keyboard.mId.isAlphabetKeyboard()) {
+            mKeyDrawParams.mTypeface = FontSingleton.getSymbolsTypeface(getContext());
+        } else {
+            mKeyDrawParams.mTypeface = Typeface.DEFAULT;
+        }
         final SharedPreferences prefs = PreferenceManagerCompat.getDeviceSharedPreferences(getContext());
         mCustomColor = Settings.readKeyboardColor(prefs, getContext());
         mTheme = Settings.getKeyboardTheme(getContext());

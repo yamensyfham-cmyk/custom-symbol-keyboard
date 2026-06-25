@@ -66,6 +66,7 @@ public final class KeyboardId {
     public final String mCustomActionLabel;
     public final boolean mShowMoreKeys;
     public final boolean mShowNumberRow;
+    public final int mSymbolPage;
 
     private final int mHashCode;
 
@@ -84,6 +85,10 @@ public final class KeyboardId {
                 ? mEditorInfo.actionLabel.toString() : null;
         mShowMoreKeys = params.mShowMoreKeys;
         mShowNumberRow = params.mShowNumberRow;
+        mSymbolPage = (elementId == ELEMENT_SYMBOLS
+                || elementId == ELEMENT_SYMBOLS_SHIFTED)
+                ? rkr.simplekeyboard.inputmethod.keyboard.SymbolKeyboardManager.getStaticCurrentPage()
+                : 0;
 
         mHashCode = computeHashCode(this);
     }
@@ -104,7 +109,8 @@ public final class KeyboardId {
                 id.navigateNext(),
                 id.navigatePrevious(),
                 id.mSubtype,
-                id.mThemeId
+                id.mThemeId,
+                id.mSymbolPage
         });
     }
 
@@ -125,7 +131,8 @@ public final class KeyboardId {
                 && other.navigateNext() == navigateNext()
                 && other.navigatePrevious() == navigatePrevious()
                 && other.mSubtype.equals(mSubtype)
-                && other.mThemeId == mThemeId;
+                && other.mThemeId == mThemeId
+                && other.mSymbolPage == mSymbolPage;
     }
 
     private static boolean isAlphabetKeyboard(final int elementId) {

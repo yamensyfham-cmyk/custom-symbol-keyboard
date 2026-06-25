@@ -36,6 +36,7 @@ import java.io.IOException;
 import java.lang.ref.SoftReference;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Locale;
 
 import rkr.simplekeyboard.inputmethod.R;
 import rkr.simplekeyboard.inputmethod.keyboard.internal.KeyboardBuilder;
@@ -176,7 +177,14 @@ public final class KeyboardLayoutSet {
                 new KeyboardBuilder<>(mContext, new KeyboardParams(sUniqueKeysCache));
         sUniqueKeysCache.setEnabled(id.isAlphabetKeyboard());
         builder.setAllowRedundantMoreKes(elementParams.mAllowRedundantMoreKeys);
-        final int keyboardXmlId = elementParams.mKeyboardXmlId;
+        int keyboardXmlId = elementParams.mKeyboardXmlId;
+        if (id.mElementId == KeyboardId.ELEMENT_SYMBOLS
+                || id.mElementId == KeyboardId.ELEMENT_SYMBOLS_SHIFTED) {
+            int page = SymbolKeyboardManager.getInstance(mContext).getCurrentPage();
+            if (page > 0 || SymbolKeyboardManager.USE_PAGED_MODE) {
+                keyboardXmlId = resolveSymbolPageXmlId(page);
+            }
+        }
         builder.load(keyboardXmlId, id);
         final Keyboard keyboard = builder.build();
         sKeyboardCache.put(id, new SoftReference<>(keyboard));
@@ -196,6 +204,17 @@ public final class KeyboardLayoutSet {
                     + ((ref == null) ? "LOAD" : "GCed") + " id=" + id);
         }
         return keyboard;
+    }
+
+    private int resolveSymbolPageXmlId(int page) {
+        String pageName = SymbolKeyboardManager.getInstance(mContext).getPageNameForPage(page);
+        int resId = mContext.getResources().getIdentifier(pageName, "xml",
+                mContext.getPackageName());
+        if (resId == 0) {
+            return mContext.getResources().getIdentifier("sym_page_0000", "xml",
+                    mContext.getPackageName());
+        }
+        return resId;
     }
 
     public static final class Builder {

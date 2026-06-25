@@ -55,6 +55,10 @@ public final class KeyboardCodesSet {
         "key_left",
         "key_right",
         "key_unspecified",
+        "key_symbol_page",
+        "key_symbol_prev",
+        "key_symbol_next",
+        "key_symbol_page_info",
     };
 
     private static final int[] DEFAULT = {
@@ -73,6 +77,11 @@ public final class KeyboardCodesSet {
         Constants.CODE_SHIFT_ENTER,
         Constants.CODE_LANGUAGE_SWITCH,
         Constants.CODE_UNSPECIFIED,
+        Constants.CODE_UNSPECIFIED,
+        Constants.CODE_SYMBOL_PAGE,
+        Constants.CODE_SYMBOL_PREV,
+        Constants.CODE_SYMBOL_NEXT,
+        Constants.CODE_SYMBOL_PAGE_INFO,
     };
 
     static {

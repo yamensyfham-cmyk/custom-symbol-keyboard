@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="SymbolKeyboardStyle" parent="android:style/Theme.DeviceDefault.Light.NoActionBar">
+        <item name="keyboardViewStyle">@style/KeyboardView.Symbols</item>
+    </style>
+
+    <style name="KeyboardView.Symbols">
+        <item name="keyBackground">@drawable/btn_keyboard_key</item>
+        <item name="functionalKeyBackground">@drawable/btn_keyboard_key</item>
+        <item name="keyLetterRatio">@fraction/config_key_letter_ratio_lxx</item>
+        <item name="keyLabelRatio">@fraction/config_key_label_ratio_lxx</item>
+        <item name="keyHintLetterRatio">@fraction/config_key_hint_letter_ratio_lxx</item>
+        <item name="keyTextColor">@color/key_text_color_lxx_system</item>
+        <item name="keyTextShadowColor">@android:color/transparent</item>
+        <item name="keyPreviewTextColor">@color/key_text_color_lxx_system</item>
+        <item name="keyPreviewTextRatio">@fraction/config_key_preview_text_ratio</item>
+    </style>
+</resources>
