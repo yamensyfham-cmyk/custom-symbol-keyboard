@@ -8,11 +8,11 @@
         <Key latin:keySpec="&#x2261; Page 112|!code/key_symbol_page" latin:keyWidth="fillRight" latin:keyLabelFlags="autoXScale" />
     </Row>
     <Row latin:keyWidth="11%p">
-        <Key latin:keySpec="&#x1D7BD;|0x1D7BD" latin:keyLabelFlags="autoXScale|autoYScale" />
-        <Key latin:keySpec="&#x1D7BE;|0x1D7BE" latin:keyLabelFlags="autoXScale|autoYScale" />
-        <Key latin:keySpec="&#x1D7BF;|0x1D7BF" latin:keyLabelFlags="autoXScale|autoYScale" />
-        <Key latin:keySpec="&#x1D7C0;|0x1D7C0" latin:keyLabelFlags="autoXScale|autoYScale" />
-        <Key latin:keySpec="&#x1D7C1;|0x1D7C1" latin:keyLabelFlags="autoXScale|autoYScale" />
+        <Key latin:keySpec="&#x1D7BD;|0x1D7BD" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x1D7BE;|0x1D7BE" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x1D7BF;|0x1D7BF" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x1D7C0;|0x1D7C0" latin:keyLabelFlags="autoScale" />
+        <Key latin:keySpec="&#x1D7C1;|0x1D7C1" latin:keyLabelFlags="autoScale" />
         <Spacer latin:keyWidth="44%p" />
     </Row>
     <Row latin:keyWidth="10%p" latin:backgroundType="functional">

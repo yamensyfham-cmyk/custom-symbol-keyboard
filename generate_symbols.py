@@ -136,7 +136,7 @@ def generate_page_xml(symbols_page, page_num, total_pages):
         for cp in row_symbols:
             label = xml_entity(cp)
             code_hex = f"0x{cp:X}"
-            lines.append(f'        <Key latin:keySpec="{label}|{code_hex}" latin:keyLabelFlags="autoXScale|autoYScale" />')
+            lines.append(f'        <Key latin:keySpec="{label}|{code_hex}" latin:keyLabelFlags="autoScale" />')
         remaining = KEYS_PER_ROW - len(row_symbols)
         if remaining > 0:
             lines.append(f'        <Spacer latin:keyWidth="{remaining * 11}%p" />')
