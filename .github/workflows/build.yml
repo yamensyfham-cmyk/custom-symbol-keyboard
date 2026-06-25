@@ -24,47 +24,44 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Accept Android SDK licenses
+      - name: Accept SDK licenses & install platforms
         run: |
-          yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses > /dev/null 2>&1 || true
-          yes | $ANDROID_HOME/tools/bin/sdkmanager --licenses > /dev/null 2>&1 || true
-
-      - name: Install required SDK components
-        run: |
+          $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses > /dev/null 2>&1 || true
           $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager \
             "platforms;android-34" \
-            "build-tools;34.0.0" \
-            "ndk;27.0.12077973" > /dev/null 2>&1 || true
+            "build-tools;34.0.0" > /dev/null 2>&1 || true
 
       - name: Create local.properties
-        run: |
-          echo "sdk.dir=$ANDROID_HOME" > local.properties
+        run: echo "sdk.dir=$ANDROID_HOME" > local.properties
 
       - name: Generate symbol keyboard layouts
         run: python3 generate_symbols.py
 
-      - name: Build with Gradle (Release)
-        run: |
-          chmod +x gradlew
-          ./gradlew assembleRelease --no-daemon
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Build Release APK
+        run: gradle assembleRelease --no-daemon -x lint
         env:
           CI: true
+          ANDROID_HOME: ${{ env.ANDROID_HOME }}
 
-      - name: Upload APK artifact
+      - name: Upload Release APK
         uses: actions/upload-artifact@v4
         with:
-          name: symbol-keyboard-release
+          name: thorfin-keyboard-release
           path: app/build/outputs/apk/release/*.apk
           if-no-files-found: warn
 
       - name: Build Debug APK
-        run: ./gradlew assembleDebug --no-daemon
+        run: gradle assembleDebug --no-daemon -x lint
         env:
           CI: true
+          ANDROID_HOME: ${{ env.ANDROID_HOME }}
 
       - name: Upload Debug APK
         uses: actions/upload-artifact@v4
         with:
-          name: symbol-keyboard-debug
+          name: thorfin-keyboard-debug
           path: app/build/outputs/apk/debug/*.apk
           if-no-files-found: warn
